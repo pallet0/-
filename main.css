@@ -1,1 +1,90 @@
-h1 {color:blue;}
+*{
+    margin: 0;
+    padding: 0;
+    /*border: 2px solid red;*/
+}
+
+/*header*/
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pagename{  
+    display:flex;
+    justify-content: center;
+}
+
+.navheader{
+    /*border: 20px solid blue;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+.tomain, .toguide, .tocommunity, .tosuggestnight, .tosuggeststar{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 0 auto ;
+
+    border: 0.1px solid black;
+    border-radius: 50%;
+
+    width: 70px;
+    height: 70px;
+}
+
+#now{
+    width: 100px;
+    height: 100px;
+}
+
+.tosuggestnight, .tosuggeststar{
+    margin-top: 100px;
+}
+
+.tocommunity,.toguide{
+    margin-top: 50px;
+}
+
+
+/*mainpage*/
+
+.mainpage{
+    display: flex;
+    flex-direction: column;
+}
+.mainpageheader{
+    display: flex;
+    justify-content: center;
+}
+.main1{
+    border: 1px solid black;
+    margin:0 auto;
+    width: 80%;
+    height: 200px;
+}
+.main2{
+    border: 1px solid black;
+    margin:0 auto;
+    width: 80%;
+    height: 200px;
+}
+
+/*guide*/
+.guidepage{
+    display: flex;
+    flex-direction: column;
+}
+.guideheader{
+    display: flex;
+    justify-content: center;
+}
+.guide1{
+    border: 1px solid black;
+    margin:0 auto;
+    width: 80%;
+}
