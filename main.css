@@ -1,8 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
 }
+
+table{
+    text-align: center;
+}
+
 
 /*header*/
 header{
@@ -88,7 +93,7 @@ header{
     margin: 0 auto;
     width: 70%;
 }
-.guide_exp{
+.guide2{
     margin: 0 auto;
     width: 70%;
     height: 500px;
@@ -113,11 +118,19 @@ header{
     height: 100%;
 }
 .night1{
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 70%;
+}
+.night2{
+    margin: 0 auto;
+    width: 70%;
     height: 500px;
 }
 
+
 /*별자리 추천 : */
-starsuggest{
+.starsuggest{
     display: flex;
     flex-direction: column;
 }
@@ -128,5 +141,12 @@ starsuggest{
     /*map양식은 야경지도와 동일*/
 
 .star1{
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 70%;
+}
+.star2{
+    margin: 0 auto;
+    width: 70%;
     height: 500px;
 }
