@@ -92,11 +92,12 @@ header{
     border: 1px solid black;
     margin: 0 auto;
     width: 70%;
+    height: 700px;
 }
 .guide2{
     margin: 0 auto;
     width: 70%;
-    height: 500px;
+    height: 700px;
 }
 
 /*야경 추천 : nightsuggest*/
@@ -111,7 +112,7 @@ header{
 .mapbox{
     margin: auto;
     width: 70%;
-    height: 500px;
+    height: 700px;
 }
 .map{
     width: 100%;
@@ -123,9 +124,12 @@ header{
     width: 70%;
 }
 .night2{
-    margin: 0 auto;
-    width: 70%;
-    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nightimg{
+    width: 100%;
 }
 
 
@@ -146,7 +150,16 @@ header{
     width: 70%;
 }
 .star2{
-    margin: 0 auto;
+    border: 1px solid black;
+    margin: 50px auto 0;
     width: 70%;
-    height: 500px;
+
+}
+.starimg{
+    width: 100%;
+}
+
+/*footer*/
+.madeby{
+    margin: 100px 0 50px 15%;
 }
