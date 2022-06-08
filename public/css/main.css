@@ -57,8 +57,7 @@ header{
 }
 
 #now{
-    width: 140px;
-    height: 140px;
+    padding: 20px;
 }
 
 .tosuggestnight, .tosuggeststar{
