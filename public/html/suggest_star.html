@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Moon Walking main page </title>
+        <link rel = "stylesheet" type = "text/css" href = "main.css">
+    </head>
+    <body>
+        <header>
+            <div class='pagename'>
+                <h1>Moon Walking</h1>
+            </div>
+            <nav>
+                <div class="navheader">
+                    <a href = "suggest_night.html" class = "tosuggestnight">주위야경명소</a>
+                    <a href = "guide.html" class = "toguide" >사진 가이드</a>
+                    <a href = "mainpage.html" class = "tomain" >mainpage</a>
+                    <a href = "community.html" class = "tocommunity">달 게시판</a>
+                    <a href = "suggest_star.html" class = "tosuggeststar" id="now">오늘의 별자리</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="starsuggest">
+                <h3 class="starheader">계절별 별자리 소개</h3>
+                <div class="mapbox">
+                    <!--별자리지도 얻어올 수 있으면 사진 대체-->
+                    <!--<img src="img/starmap.jpeg" alt="별자리지도" width="100%" height="100%">-->
+                    <iframe src="https://www.google.com/sky/#latitude=66.87587403582265&longitude=-8.906398381380715&zoom=4&Spitzer=0.00&ChandraXO=0.00&Galex=0.00&IRAS=0.00&WMAP=0.00&Cassini=0.00&slide=1&mI=-1&oI=-1" class="map"></iframe>
+                    
+                </div>
+                <table class="star1" border="1">
+                    <!--계절별 별자리 소개-->
+                    <th rowspan="2"></th>
+                    <th rowspan="2" width="25%">계절</th>
+                    <th colspan="2" width="65%">별자리</th>
+                    <tr>
+                        <td></td>
+                        <td>대표적인 별자리</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>봄</td>
+                        <td>사자자리, 작은 사자자리, 살쾡이자리, 목동자리, 사냥개자리, 처녀자리 까마귀자리, 머리털자리, 천칭자리, 바다뱀자리, 육분의자리, 컵자기</td>
+                        <td>큰곰자리, 목자자리, 처녀자리, 사자자리</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>여름</td>
+                        <td>거문고자리, 독수리자리, 백조자리, 화살자리, 여우자리, 방패자리, 돌고래자리, 헤르쿨레스자리, 전갈자리, 뱀주인자리, 뱀자리, 궁수자리</td>
+                        <td>직녀(베가자리), 견우(알타이르)자리, 백조자리, 거문고자리, 독수리자리, 전갈자리</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>가을</td>
+                        <td>안드로메다자리, 페르세우스자리, 도마뱀자리, 삼각형자리, 양자리, 물고기자리, 조랑말자리, 남쪽물고기자리, 물병자리, 염소자리, 고래자리</td>
+                        <td>페가수스자리, 카시오페이아자리, 물고리자리, 안드로메다자리</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>겨울</td>
+                        <td>오리온자리, 큰개자리, 작은개자리, 토끼자리, 에리다누스자리, 황소자리, 쌍둥이자리, 외뿔소자리, 마차부자리, 게자리</td>
+                        <td>오리온자리, 황소자리, 쌍둥이자리, 큰개자리, 작은개자리</td>
+                    </tr>                    
+                </table>
+                <table class="star2">
+                    <!--별자리 사진들-->
+                    <tr>
+                        <td><img src="star/springstar.jpeg" alt="봄철별자리" class="starimg"></td>
+                        <td><img src="star/summerstar.jpeg" alt="여름철별자리" class="starimg"></td>
+                    </tr>
+                    <tr>
+                        <td>봄철 별자리</td>
+                        <td>여름철 별자리</td>
+                    </tr>
+                    <tr>
+                        <td><img src="star/fallstar.png" alt="가을철별자리" class="starimg"></td>
+                        <td><img src="star/winterstar.jpeg" alt="겨울철별자리" class="starimg"></td>
+                    </tr>
+                    <tr>
+                        <td>가을철 별자리</td>
+                        <td>겨울철 별자리</td>
+                    </tr>
+                </table>
+
+            </div>
+           
+        </main>
+        <footer class="madeby">
+            <p>김이지 노예준 박성용</p>
+        </footer>
+    </body>
+</html>
