@@ -4,10 +4,10 @@ function mainmoon() {var d=new Date().getDate();
 
     var url= "https://www.icalendar37.net/lunar/api/?lang=en&month="+
     (new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+
-    "&size=100&lightColor=rgb(245,245,245)&shadeColor=rgb(17,17,17)&LDZ="+
+    "&size=400&lightColor=rgb(245,245,245)&shadeColor=rgb(17,17,17)&LDZ="+
     new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";
 
-    m[1].style.height="100px";
+    m[1].style.height="400px";
 
     a.onreadystatechange=function(){
         if(a.readyState==4&&a.status==200){

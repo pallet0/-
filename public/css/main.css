@@ -100,6 +100,12 @@ header{
     width: 70%;
     height: auto;
 }
+/*
+#contain_moon{
+    width: 800px;
+    height: 800px;
+}
+*/
 .main2{
     border: 1px solid rgb(128, 126, 112);
     margin:0 auto;
