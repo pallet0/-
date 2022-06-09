@@ -20,13 +20,16 @@ function okgood1(pos){
         .then((response) => response.json())
         .then(function(data){
             let cloud = data.clouds.all;
-            let time1 = data.sys.sunset;
-            let time2 = data.sys.sunrise;
-            let time3 = new Date();
-            time3 = time3.getTime() / 1000;
-            console.log(time3);
-            if((time3 >= time1) && (time2 <= time1)){
+            let sunsettime = data.sys.sunset;
+            let sunrisetime = data.sys.sunrise;
+            let currtime = new Date();
+            currtime = currtime.getTime() / 1000;
+            console.log(currtime);
+            if((currtime <= sunrisetime)){
                 document.getElementById("main4").innerHTML = "해가 져서 달을 볼 수 있어요 :) <br>";     
+            }
+            else if((currtime >= sunsettime)){
+                document.getElementById("main4").innerHTML = "해가 져서 달을 볼 수 있어요 :) <br>";   
             }
             else{
                 document.getElementById("main4").innerHTML = "해가 아직 떠있어요 밝아서 잘 보이지 않아요:( <br>";     
@@ -37,7 +40,7 @@ function okgood1(pos){
                 document.getElementById("main3").innerHTML = "구름 없이 맑아요 :) <br>";
             }
             else if((cloud >= 26) && (cloud <= 50)){
-                document.getElementById("main3").innerHTML = "구름 조금 있어요 :) <br>";
+                document.getElementById("main3").innerHTML = "구름이 조금 있어요 :) <br>";
             }
             else if((cloud >= 51) && (cloud <= 75)){
                 document.getElementById("main3").innerHTML = "구름이 많고 흐려요 :( <br>";
