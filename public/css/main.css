@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    /*border: 2px solid red;*/
+    border: 2px solid red;
     color: rgb(198, 196, 182);
     
 }
@@ -108,11 +108,19 @@ header{
     height: 800px;
 }
 */
-.main2{
+.mainx{
     /*border: 1px solid rgb(128, 126, 112);*/
-    margin:0 auto;
+    margin:50px auto 0 ;
     width: 70%;
     /*height: 200px;*/
+    text-align: center;
+    font-size: 20px;
+}
+.mainbox{
+    
+}
+.mainbutton{
+    text-decoration: none;
 }
 
 /*guide*/
