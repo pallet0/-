@@ -1,15 +1,25 @@
 *{
     margin: 0;
     padding: 0;
-    border: 2px solid red;
     color: rgb(198, 196, 182);
-    
+    font-family: 'EliceDigitalBaeum_Bold';
+}
+
+@font-face {
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    height: 3000px;
 }
 
 html{
     background-image: url('space/space3_2.jpg');
-
 }
+
 table{
     text-align: center;
     background-color: rgb(17, 17, 16);
@@ -25,6 +35,8 @@ header{
 }
 
 .pagename{  
+    margin: 0 auto;
+    margin-top: 50px;
     display:flex;
     justify-content: center;
     font-size: 20px;
@@ -116,11 +128,34 @@ header{
     text-align: center;
     font-size: 20px;
 }
+
 .mainbox{
-    
+    width: 100%;
+    text-align: center;
 }
+
 .mainbutton{
+    width: 200px;
+    font-size: 20px;
     text-decoration: none;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-right: 10px;
+    color:black;
+}
+
+.mainbutton:hover{
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    border: 2px solid rgb(198, 196, 182);
+    border-radius: 10px;
+    margin-right: 10px;
+    color:black;
+    cursor:pointer;
 }
 
 /*guide*/
@@ -129,14 +164,24 @@ header{
     flex-direction: column;
 }
 .guideheader{
+    font-size: 35px;
+    font-weight: bold;
     display: flex;
     justify-content: center;
 }
-.guide1{
+table.guide1{
     margin: 20px auto;
-    width: 70%;
+    width: 85%;
     height: auto;
+    border: 1px solid rgb(128, 126, 112);
+    border-radius: 11px;
+    font-size: 20px;
 }
+
+td{
+    border-bottom: 1px solid rgb(128, 126, 112);
+}
+
 .guide2{
     display: flex;
     justify-content: center;
@@ -172,6 +217,8 @@ header{
     flex-direction: column;
 }
 .nightheader{
+    font-size: 35px;
+    font-weight: bold;
     display: flex;
     justify-content: center;
 }
@@ -225,4 +272,23 @@ header{
 /*footer*/
 .madeby{
     margin: 100px 0 50px 15%;
+}
+
+.subbut{
+    width: 15%;
+    height: auto;
+}
+
+div.postside{
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+}
+
+#appendhere{
+    background-color: white;
+    border: 1px solid black;
+    height: 500px;
+    width: 786px;
+    margin: 0 auto;
 }
