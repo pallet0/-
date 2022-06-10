@@ -13,10 +13,10 @@ async function load(){
 
         var url= "https://www.icalendar37.net/lunar/api/?lang=en&month="+
         (new Date().getMonth()+1)+"&year="+(new Date().getFullYear())+
-        "&size=100&lightColor=rgb(245,245,245)&shadeColor=rgb(17,17,17)&LDZ="+
+        "&size=400&lightColor=rgb(245,245,245)&shadeColor=rgb(17,17,17)&LDZ="+
         new Date(new Date().getFullYear(),new Date().getMonth(),1)/1000+"";
 
-        m[1].style.height="100px";
+        m[1].style.height="400px";
         
         a.onreadystatechange=function(){
             if(a.readyState==4&&a.status==200){
@@ -50,7 +50,8 @@ async function load(){
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat1}&lon=${lon1}&appid=cf56540f55494aadc10269c58b60dbdb`)
             .then((response) => response.json())
             .then((data) => {
-                let id = data.weather.id;
+                console.log(data);
+                let id = data.weather[0].id;
                 let cloud = data.clouds.all;
                 let visible = data.visibility;
                 let s; // 임시 점수
@@ -65,7 +66,7 @@ async function load(){
                 else if(visible < 5000) { s += 1;}
                 else {s += 2;}
                 //날씨(0~1)
-                switch(id/8){
+                switch(parseInt(id/100)){
                     case 2: // 천둥번개
                         s *= 0;
                         w = "천둥번개가 치고 있어요~!!" 
@@ -93,7 +94,7 @@ async function load(){
                             s += 1; 
                         } else {
                             w = "구름이 조금 있는 것 같네요...";
-                            s += 1;
+                            s += 0;
                         }
                 }
                 let weatherScore = {"score": -1, "state": "none"};

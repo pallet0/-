@@ -36,12 +36,12 @@
                         <div style="margin-top:-7px;margin-bottom:-15px;padding:30px;filter:drop-shadow(0 0 30px hsl(220,100%,15%))"></div>
                         <div>.</div>
                         <div style="font-size:small">.</div>
-                        <span id="verdict"> <br> 로딩중... <br> </span><br>
                     </div>
                 </div>
                 <div id = "invisible" style = "display: none"></div>
                 <div class="mainx">
                     <!--현재위치 정보 받기, 현재 상태 출력-->
+                    <span id="verdict"> <br> 로딩중... <br> </span><br>
                     <br>
                     <div class="mainbox">
                         <div>
@@ -74,14 +74,15 @@
                 let v = `오늘의 점수는... ${score}/10점! <br>`;
 
                 if(score == 0) {
-                    v += "오늘은 달이 보이지 않아요!";
+                    v += "<b>오늘은 달이 보이지 않아요!</b>";
                 } else if (score < 4) {
-                    v += "달이 잘 안 보일 수도 있어요!";
+                    v += "<b>달이 잘 안 보일 수도 있어요!</b>";
+                } else if(score < 7) {
+                    v += "<b>달이 어느정도 보일 거예요!</b>"
                 } else if (score  < 9) {
-                    console.log("hi mom");
-                    v += "달 사진 찍기 괜찮은 날이에요!";
+                    v += "<b>달 사진 찍기 괜찮은 날이에요!</b>";
                 } else {
-                    v += "달 사진 찍기 최고의 날이에요!!";
+                    v += "<b>달 사진 찍기 최고의 날이에요!!</b>";
                 }
 
                 v += "<br>" + w.state;
