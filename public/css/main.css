@@ -3,6 +3,7 @@
     padding: 0;
     color: rgb(198, 196, 182);
     font-family: 'EliceDigitalBaeum_Bold';
+    border: 1px solid red;
 }
 
 @font-face {
@@ -209,6 +210,43 @@ td{
 .guidevideo{
     width:100%;
     height:100%;
+}
+
+/*community*/
+.communitypage{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+.communityheader{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+.moonoftoday{
+    height: 600px;
+    width: 50%;
+    margin: 0 auto;
+}
+.moonoftodayheader{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+.moonform{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+.moonoftodaymain{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+}
+.moonimg{
+    height: 100%;
 }
 
 /*야경 추천 : nightsuggest*/
