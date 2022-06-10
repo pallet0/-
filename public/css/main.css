@@ -3,7 +3,6 @@
     padding: 0;
     color: rgb(198, 196, 182);
     font-family: 'EliceDigitalBaeum_Bold';
-    border: 1px solid red;
 }
 
 @font-face {
@@ -247,6 +246,9 @@ td{
 }
 .moonimg{
     height: 100%;
+}
+.communitycomment{
+    
 }
 
 /*야경 추천 : nightsuggest*/
