@@ -49,11 +49,7 @@ async function load(){
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat1}&lon=${lon1}&appid=cf56540f55494aadc10269c58b60dbdb`)
             .then((response) => response.json())
             .then((data) => {
-<<<<<<< HEAD
                 let dont = false // dont = true일땐 항상 0
-=======
-                console.log(data);
->>>>>>> f5b43546ac6efc3d6d987dda008bc02125b88e04
                 let id = data.weather[0].id;
                 let cloud = data.clouds.all;
                 let visible = data.visibility;
@@ -62,18 +58,14 @@ async function load(){
                 //구름점수(0~3)
                 if(cloud < 10) { s = 3;}
                 else if (cloud < 25) { s = 2;}
-                else if (cloud < 50) { s = 1;}
+                else if (cloud < 65) { s = 1;}
                 else { dont = true;}
                 //시야각점수(0~2)
                 if(visible < 1000) {dont = true;}
                 else if(visible < 5000) { s += 1;}
                 else {s += 2;}
-                //날씨(0~1)
-<<<<<<< HEAD
+                //날씨, 기본점수 1점 부여, 그 외 전부 0점처리
                 switch(Math.floor(id/100)){
-=======
-                switch(parseInt(id/100)){
->>>>>>> f5b43546ac6efc3d6d987dda008bc02125b88e04
                     case 2: // 천둥번개
                     dont = true;
                         w = "천둥번개가 치고 있어요~!!" 
@@ -101,7 +93,7 @@ async function load(){
                             s += 1; 
                         } else {
                             w = "구름이 조금 있는 것 같네요...";
-                            s += 0;
+                            s += 1;
                         }
                 }
                 let weatherScore = {"score": -1, "state": "none"};
