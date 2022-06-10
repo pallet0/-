@@ -55,6 +55,7 @@ async function load(){
                 let visible = data.visibility;
                 let s = -1; // 임시 점수
                 let w = ""; // 날씨
+                console.log(data);
                 //구름점수(0~3)
                 if(cloud < 10) { s = 3;}
                 else if (cloud < 25) { s = 2;}
@@ -65,6 +66,7 @@ async function load(){
                 else if(visible < 5000) { s += 1;}
                 else {s += 2;}
                 //날씨, 기본점수 1점 부여, 그 외 전부 0점처리
+                console.log(id);
                 switch(Math.floor(id/100)){
                     case 2: // 천둥번개
                     dont = true;
@@ -100,6 +102,7 @@ async function load(){
                 if(dont) { weatherScore.score = 0}
                 else { weatherScore.score = s; }
                 weatherScore.state = w;
+                console.log(weatherScore);
                 
                 document.getElementById('weather').innerHTML = JSON.stringify(weatherScore);
             })
