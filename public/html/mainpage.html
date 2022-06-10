@@ -7,6 +7,11 @@
         <link rel = "stylesheet" type = "text/css" href = "main.css">
     </head>
     <body>
+
+        <div id = "air" style = "display: none;"></div>
+        <div id = "phase" style = "display: none;"></div>
+        <div id = "weather" style = "display: none;"></div>
+
         <header>
             <div class='pagename'>
                 <h1>🌕 Moon Walking 🌕</h1>
@@ -31,13 +36,12 @@
                         <div style="margin-top:-7px;margin-bottom:-15px;padding:30px;filter:drop-shadow(0 0 30px hsl(220,100%,15%))"></div>
                         <div>.</div>
                         <div style="font-size:small">.</div>
+                        <span id="verdict"> <br> 로딩중... <br> </span><br>
                     </div>
                 </div>
+                <div id = "invisible" style = "display: none"></div>
                 <div class="mainx">
                     <!--현재위치 정보 받기, 현재 상태 출력-->
-                    <span id="main2"></span><br>
-                    <span id="main3"></span><br>
-                    <span id="main4"></span><br>
                     <br>
                     <div class="mainbox">
                         <div>
@@ -57,4 +61,35 @@
             <p>김이지 노예준 박성용</p>
         </footer>-->
     </body>
+
+    <script>
+        window.addEventListener("load", ()=>{
+            setTimeout(()=>{
+                let a = document.getElementById("air").innerHTML;
+                let p = document.getElementById("phase").innerHTML;
+                let w = JSON.parse(document.getElementById("weather").innerHTML);
+                let score = parseInt(a) + parseInt(p) + w.score;
+
+                console.log(a);
+                let v = `오늘의 점수는... ${score}/10점! <br>`;
+
+                if(score == 0) {
+                    v += "오늘은 달이 보이지 않아요!";
+                } else if (score < 4) {
+                    v += "달이 잘 안 보일 수도 있어요!";
+                } else if (score  < 9) {
+                    console.log("hi mom");
+                    v += "달 사진 찍기 괜찮은 날이에요!";
+                } else {
+                    v += "달 사진 찍기 최고의 날이에요!!";
+                }
+
+                v += "<br>" + w.state;
+
+                document.getElementById("verdict").innerHTML = v;
+
+            }, 5000) // 솔직히 논리상 개에바인데 인터넷만 빠르면 왠만하면 될거임
+        })
+    </script>
+
 </html>
