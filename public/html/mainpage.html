@@ -65,23 +65,30 @@
     <script>
         window.addEventListener("load", ()=>{
             setTimeout(()=>{
-                let a = document.getElementById("air").innerHTML;
-                let p = document.getElementById("phase").innerHTML;
+                let a = parseInt(document.getElementById("air").innerHTML);
+                let p = parseInt(document.getElementById("phase").innerHTML);
                 let w = JSON.parse(document.getElementById("weather").innerHTML);
-                let score = parseInt(a) + parseInt(p) + w.score;
+                let score;
+                if (a*p*w.score != 0){
+                    score = a + p + w.score;
+                } else {
+                    score = 0;
+                }
 
                 console.log(a);
                 let v = `오늘의 점수는... ${score}/10점! <br>`;
 
                 if(score == 0) {
-                    v += "오늘은 달이 보이지 않아요!";
+                    v += "<b>오늘은 달이 보이지 않아요...</b>";
                 } else if (score < 4) {
-                    v += "달이 잘 안 보일 수도 있어요!";
+                    v += "<b>달이 잘 안 보일 수도 있어요..!</b>";
+                } else if(score < 7) {
+                    v += "<b>달이 어느정도 보일 거예요!</b>"
                 } else if (score  < 9) {
                     console.log("hi mom");
-                    v += "달 사진 찍기 괜찮은 날이에요!";
+                    v += "<b>달 사진 찍기 괜찮은 날이에요!</b>";
                 } else {
-                    v += "달 사진 찍기 최고의 날이에요!!";
+                    v += "<b>달 사진 찍기 최고의 날이에요!!</b>";
                 }
 
                 v += "<br>" + w.state;

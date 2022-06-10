@@ -32,7 +32,6 @@ async function load(){
                 else {phaseScore = 1;}
 
                 m[3].innerHTML = "Next full moon<br>"+ b.nextFullMoon;
-
                 document.getElementById('phase').innerHTML = JSON.stringify(phaseScore);
             }};
         a.open("GET",url,true);
@@ -50,38 +49,39 @@ async function load(){
             fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat1}&lon=${lon1}&appid=cf56540f55494aadc10269c58b60dbdb`)
             .then((response) => response.json())
             .then((data) => {
-                let id = data.weather.id;
+                let dont = false // dont = true일땐 항상 0
+                let id = data.weather[0].id;
                 let cloud = data.clouds.all;
                 let visible = data.visibility;
-                let s; // 임시 점수
+                let s = -1; // 임시 점수
                 let w = ""; // 날씨
                 //구름점수(0~3)
                 if(cloud < 10) { s = 3;}
                 else if (cloud < 25) { s = 2;}
                 else if (cloud < 50) { s = 1;}
-                else { s = 0;}
+                else { dont = true;}
                 //시야각점수(0~2)
-                if(visible < 1000) { s *= 0;}
+                if(visible < 1000) {dont = true;}
                 else if(visible < 5000) { s += 1;}
                 else {s += 2;}
                 //날씨(0~1)
-                switch(id/8){
+                switch(Math.floor(id/100)){
                     case 2: // 천둥번개
-                        s *= 0;
+                    dont = true;
                         w = "천둥번개가 치고 있어요~!!" 
                     case 3: //보슬비
-                        if(id >= 302){ s*=0 }
+                        if(id >= 302){ dont = true;}
                         else {s += 1;}
                         w = "보드라운 보슬비가 내리고 있어요!" 
                     case 5: // 비
-                        s *= 0;
+                        dont = true;
                         w = "토독토독 비가 내리고 있어요! 구름이 두꺼워 달은 보기 힘들어요 :(" 
                     case 6: // 눈
-                        s *= 0;
+                        dont = true;
                         w = "눈을 수북히 쌓는 두꺼운 구름이 등장했어요~!" 
                     case 7: // 특수(701 -> 안개)
                         if(id != 701) { 
-                            s *= 0;
+                            dont = true;
                             w = "대기에 이상한 일이 벌어지고 있어요~! 대피해요!!";
                         } else {
                             s += 1
@@ -97,7 +97,8 @@ async function load(){
                         }
                 }
                 let weatherScore = {"score": -1, "state": "none"};
-                weatherScore.score = s;
+                if(dont) { weatherScore.score = 0}
+                else { weatherScore.score = s; }
                 weatherScore.state = w;
                 
                 document.getElementById('weather').innerHTML = JSON.stringify(weatherScore);
