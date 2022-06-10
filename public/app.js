@@ -5,6 +5,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/html/mainpage.html");
 });
 
+app.use(express.static("public"));
 app.use(express.static(__dirname + "/css"));
 app.use(express.static(__dirname + "/html"));
 app.use(express.static(__dirname + "/img"));
