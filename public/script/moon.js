@@ -59,44 +59,51 @@ async function load(){
                 //구름점수(0~3)
                 if(cloud < 10) { s = 3;}
                 else if (cloud < 25) { s = 2;}
-                else if (cloud < 65) { s = 1;}
+                else if (cloud < 85) { s = 1;}
                 else { dont = true;}
                 //시야각점수(0~2)
                 if(visible < 1000) {dont = true;}
                 else if(visible < 5000) { s += 1;}
                 else {s += 2;}
                 //날씨, 기본점수 1점 부여, 그 외 전부 0점처리
-                console.log(id);
                 switch(Math.floor(id/100)){
                     case 2: // 천둥번개
                     dont = true;
-                        w = "천둥번개가 치고 있어요~!!" 
+                        w = "천둥번개가 치고 있어요~!!"
+                        break;
                     case 3: //보슬비
                         if(id >= 302){ dont = true;}
                         else {s += 1;}
                         w = "보드라운 보슬비가 내리고 있어요!" 
+                        break;
                     case 5: // 비
                         dont = true;
-                        w = "토독토독 비가 내리고 있어요! 구름이 두꺼워 달은 보기 힘들어요 :(" 
+                        w = "토독토독 비가 내리고 있어요! 구름이 두꺼워 달은 보기 힘들어요 :(";
+                        break;
+                        console.log("비")
                     case 6: // 눈
                         dont = true;
                         w = "눈을 수북히 쌓는 두꺼운 구름이 등장했어요~!" 
+                        break;
                     case 7: // 특수(701 -> 안개)
                         if(id != 701) { 
                             dont = true;
                             w = "대기에 이상한 일이 벌어지고 있어요~! 대피해요!!";
+                            break;
                         } else {
                             s += 1
-                            w = "곳곳에 자그마한 이슬이 맺혔네요!";   
+                            w = "곳곳에 자그마한 이슬이 맺혔네요!";
+                            break;
                         }
                     default:  // 맑음 or 구름뿐(흐림)
                         if(id == 800){
                             w = "날이 정말 맑아요!";
-                            s += 1; 
+                            s += 1;
                         } else {
                             w = "구름이 조금 있는 것 같네요...";
                             s += 1;
                         }
+                        break;
                 }
                 let weatherScore = {"score": -1, "state": "none"};
                 if(dont) { weatherScore.score = 0}
