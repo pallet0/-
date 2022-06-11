@@ -80,7 +80,6 @@ async function load(){
                         dont = true;
                         w = "토독토독 비가 내리고 있어요! 구름이 두꺼워 달은 보기 힘들어요 :(";
                         break;
-                        console.log("비")
                     case 6: // 눈
                         dont = true;
                         w = "눈을 수북히 쌓는 두꺼운 구름이 등장했어요~!" 
